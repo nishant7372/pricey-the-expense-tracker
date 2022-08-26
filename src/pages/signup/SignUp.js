@@ -34,6 +34,7 @@ export default function SignUp() {
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
             value={name}
+            required
           />
         </label>
         <label>
@@ -43,6 +44,7 @@ export default function SignUp() {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           />
         </label>
         <label>
@@ -53,6 +55,7 @@ export default function SignUp() {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
+              required
             />
             <div className={styles["img"]}>
               <img
@@ -63,8 +66,12 @@ export default function SignUp() {
           </div>
         </label>
         {error && <div>{error}</div>}
-        {isPending && <div>signing you in...</div>}
-        <button>SignUp</button>
+        {isPending && (
+          <button className={`${styles["btn"]} ${styles["disabled"]}`} disabled>
+            Creating Account...
+          </button>
+        )}
+        {!isPending && <button className={styles.btn}>SignUp</button>}
       </form>
     </div>
   );

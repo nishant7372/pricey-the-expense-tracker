@@ -72,15 +72,22 @@
   justify-content: center;
 }
 
-.rightSection a {
-  text-decoration: none;
+.rightSection a,
+.rightSection .btn {
   color: white;
+  text-decoration: none;
   border: 2px solid white;
   padding: 0.2rem 1rem;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-.rightSection a:hover {
+.rightSection a {
+  color: white;
+}
+
+.rightSection a:hover,
+.rightSection .btn:hover {
   background-color: white;
   transition: background-color 0.3s ease-in-out;
 }

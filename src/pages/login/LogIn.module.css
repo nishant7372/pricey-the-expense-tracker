@@ -43,7 +43,7 @@
   background-color: rgba(40, 39, 47, 255);
 }
 
-button {
+.btn {
   margin-top: 1rem;
   font-size: medium;
   padding: 0.7rem 1rem;
@@ -54,7 +54,16 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.disabled {
+  color: #555 !important;
+}
+
+.disabled:hover {
+  background-color: white !important;
+  color: #555 !important;
+}
+
+.btn:hover {
   background-color: green;
   color: white;
 }

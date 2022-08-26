@@ -2,10 +2,14 @@ import styles from "./NavBar.module.css";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useLogout } from "../../hooks/useLogout";
 
 export default function NavBar() {
   const navColors = ["blue", "magenta", "orangered", "green"];
   const [index, setIndex] = useState(0);
+  const [login, setLogin] = useState(false);
+
+  const { logout } = useLogout();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,6 +39,12 @@ export default function NavBar() {
           <NavLink className={`font-${navColors[index]}`} to="/signup">
             SignUp
           </NavLink>
+          <div
+            className={`${styles[`btn`]} font-${navColors[index]}`}
+            onClick={logout}
+          >
+            LogOut
+          </div>
         </div>
       </div>
     </div>

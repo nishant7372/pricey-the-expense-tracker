@@ -27,20 +27,20 @@ a.active {
 
 .font-green:hover,
 .font-green.active {
-  color: var(--green);
+  color: var(--green) !important;
 }
 
 .font-magenta:hover,
 .font-magenta.active {
-  color: var(--magenta);
+  color: var(--magenta) !important;
 }
 
 .font-orangered:hover,
 .font-orangered.active {
-  color: var(--orangered);
+  color: var(--orangered) !important;
 }
 
 .font-blue:hover,
 .font-blue.active {
-  color: var(--blue);
+  color: var(--blue) !important;
 }
