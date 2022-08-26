@@ -1,0 +1,86 @@
+.nav-container {
+  transition: all 1s ease-in-out;
+}
+
+.sticky {
+  transition: all 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.2rem 0;
+  }
+  .leftSection {
+    padding-left: 0;
+  }
+  .rightSection {
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+  }
+  .leftSection {
+    padding-left: 4rem;
+  }
+  .rightSection {
+    padding-right: 4rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  min-width: 33rem;
+  max-width: 140rem;
+  margin: auto;
+}
+
+.leftSection {
+  display: flex;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.leftSection img {
+  width: 4rem;
+  height: 4rem;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.rightSection {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightSection a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: 0.2rem 1rem;
+  border-radius: 6px;
+}
+
+.rightSection a:hover {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+}

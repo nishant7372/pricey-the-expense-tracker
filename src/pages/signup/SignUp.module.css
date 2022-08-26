@@ -1,0 +1,89 @@
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  gap: 2rem;
+  padding: 3.5rem;
+  color: white;
+}
+
+.signup-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.signup-form input {
+  height: 2.5rem;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: medium;
+  border-width: 0px;
+  outline: 0;
+  -webkit-appearance: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: rgba(55, 54, 62, 255);
+  color: white;
+}
+
+.signup-form span {
+  align-self: flex-start;
+}
+
+.form-container {
+  max-width: 35rem;
+  min-width: 33rem;
+  width: 25vw;
+  margin: 5rem auto;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  background-color: rgba(40, 39, 47, 255);
+}
+
+button {
+  margin-top: 1rem;
+  font-size: medium;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
+}
+
+.password-field {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background-color: rgba(55, 54, 62, 255);
+}
+
+.password-field input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.password-field img {
+  padding: 0 1rem;
+  width: 1.8rem;
+  height: 2rem;
+  filter: invert(60%);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

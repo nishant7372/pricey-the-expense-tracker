@@ -1,0 +1,46 @@
+:root {
+  --magenta: rgb(255, 0, 123);
+  --orangered: orangered;
+  --blue: blue;
+  --green: green;
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.magenta {
+  background-color: var(--magenta);
+}
+
+.orangered {
+  background-color: var(--orangered);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+a.active {
+  background-color: white;
+}
+
+.font-green:hover,
+.font-green.active {
+  color: var(--green);
+}
+
+.font-magenta:hover,
+.font-magenta.active {
+  color: var(--magenta);
+}
+
+.font-orangered:hover,
+.font-orangered.active {
+  color: var(--orangered);
+}
+
+.font-blue:hover,
+.font-blue.active {
+  color: var(--blue);
+}
