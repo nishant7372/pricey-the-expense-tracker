@@ -28,7 +28,7 @@ export default function SignUp() {
       <form
         className={styles["signup-form"]}
         onSubmit={handleSubmit}
-        spellcheck="false"
+        spellCheck="false"
       >
         <h2>SignUp</h2>
         <label>

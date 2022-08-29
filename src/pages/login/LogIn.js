@@ -39,7 +39,7 @@ export default function LogIn() {
       <form
         className={styles["login-form"]}
         onSubmit={handleSubmit}
-        spellcheck="false"
+        spellCheck="false"
       >
         <h2>LogIn</h2>
         <label>

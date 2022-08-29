@@ -44,7 +44,7 @@ export default function TransactionForm({ uid }) {
   }, [response.success]);
 
   return (
-    <div className={styles[`form-container`]} spellcheck="false">
+    <div className={styles[`form-container`]} spellCheck="false">
       <form className={styles["transaction-form"]} onSubmit={handleSubmit}>
         <h2>Add Transaction</h2>
         <label>
@@ -74,7 +74,7 @@ export default function TransactionForm({ uid }) {
         <label>
           <span>Small Description:</span>
           <textarea
-            maxlength="100"
+            maxLength="100"
             placeholder="Write a Small Description"
             onChange={(e) => setDescription(e.target.value)}
             value={description}
