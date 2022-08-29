@@ -9,7 +9,7 @@
   z-index: 2;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .navbar {
     flex-direction: column;
     gap: 2rem;
@@ -23,7 +23,7 @@
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .navbar {
     flex-direction: row;
     padding: 10px;
@@ -64,7 +64,7 @@
 }
 
 .rightSection {
-  font-size: 2rem;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -90,4 +90,9 @@
 .rightSection .btn:hover {
   background-color: white;
   transition: background-color 0.3s ease-in-out;
+}
+
+.userName {
+  color: white;
+  font-size: 2rem;
 }

@@ -1,0 +1,18 @@
+.main-container {
+  width: 90vw;
+  max-width: 130rem;
+  min-width: 35rem;
+  display: flex;
+  gap: 3rem;
+  margin: 4rem auto;
+}
+
+.transaction-list {
+  font-size: large;
+  color: white;
+  width: 95rem;
+}
+
+.transaction-form {
+  width: 32rem;
+}

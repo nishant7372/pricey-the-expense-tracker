@@ -10,6 +10,17 @@ export default function LogIn() {
 
   const { login, error, isPending } = useLogin();
 
+  const parseError = (error) => {
+    if (
+      error.indexOf("no user record") >= 0 ||
+      error.indexOf("password") >= 0
+    ) {
+      return "⚠️ Incorrect Email or Password";
+    } else {
+      return "⚠️" + error;
+    }
+  };
+
   const showPassword = () => {
     if (passwordType == "password") {
       setPasswordType("text");
@@ -25,7 +36,11 @@ export default function LogIn() {
 
   return (
     <div className={styles[`form-container`]}>
-      <form className={styles["login-form"]} onSubmit={handleSubmit}>
+      <form
+        className={styles["login-form"]}
+        onSubmit={handleSubmit}
+        spellcheck="false"
+      >
         <h2>LogIn</h2>
         <label>
           <span>Email</span>
@@ -35,9 +50,10 @@ export default function LogIn() {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
+            autoFocus
           />
         </label>
-        <label>
+        <label className={styles.lastLabel}>
           <span>Password</span>
           <div className={styles["password-field"]}>
             <input
@@ -55,7 +71,7 @@ export default function LogIn() {
             </div>
           </div>
         </label>
-        {error && <div>{error}</div>}
+        {error && <div className={styles.error}>{parseError(error)}</div>}
         {isPending && (
           <button className={`${styles["btn"]} ${styles["disabled"]}`} disabled>
             Signing in...

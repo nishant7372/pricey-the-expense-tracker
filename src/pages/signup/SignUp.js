@@ -25,7 +25,11 @@ export default function SignUp() {
 
   return (
     <div className={styles[`form-container`]}>
-      <form className={styles["signup-form"]} onSubmit={handleSubmit}>
+      <form
+        className={styles["signup-form"]}
+        onSubmit={handleSubmit}
+        spellcheck="false"
+      >
         <h2>SignUp</h2>
         <label>
           <span>Name</span>
@@ -35,6 +39,7 @@ export default function SignUp() {
             onChange={(e) => setName(e.target.value)}
             value={name}
             required
+            autoFocus
           />
         </label>
         <label>
@@ -47,7 +52,7 @@ export default function SignUp() {
             required
           />
         </label>
-        <label>
+        <label className={styles.lastLabel}>
           <span>Password</span>
           <div className={styles["password-field"]}>
             <input
@@ -65,13 +70,13 @@ export default function SignUp() {
             </div>
           </div>
         </label>
-        {error && <div>{error}</div>}
+        {error && <div className={styles.error}>{"⚠️ " + error}</div>}
         {isPending && (
           <button className={`${styles["btn"]} ${styles["disabled"]}`} disabled>
             Creating Account...
           </button>
         )}
-        {!isPending && <button className={styles.btn}>SignUp</button>}
+        {!isPending && <button className={`${styles["btn"]}`}>SignUp</button>}
       </form>
     </div>
   );
