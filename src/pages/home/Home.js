@@ -28,9 +28,13 @@ export default function Home() {
 
   //sorting by Name
   const sort = (document) => {
-    if (option == "transactionName") {
+    if (option == "transactionName" && order == "asc") {
       document.sort((a, b) => {
         return a.transactionName.localeCompare(b.transactionName);
+      });
+    } else if (option == "transactionName" && order == "desc") {
+      document.sort((a, b) => {
+        return b.transactionName.localeCompare(a.transactionName);
       });
     }
     return document;

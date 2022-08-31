@@ -15,7 +15,7 @@
     margin: auto;
   }
   .transaction-list {
-    width: 90%;
+    width: 95%;
     margin: auto;
   }
 }
@@ -35,7 +35,7 @@
 }
 
 .transaction-form {
-  width: 32rem;
+  width: max(32rem, 256px);
 }
 
 .title {
@@ -64,7 +64,7 @@
 
 select {
   border-radius: 4px;
-  font-size: 1.9rem;
+  font-size: min(1.9rem, 13.3px);
   border-width: 0px;
   outline: 0;
   /* -webkit-appearance: none; */
@@ -79,5 +79,5 @@ select {
 option {
   padding: 0rem 4rem;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: min(1.8rem, 12.6px);
 }
