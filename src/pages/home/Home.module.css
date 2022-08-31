@@ -1,7 +1,7 @@
 .main-container {
   width: 90vw;
   max-width: 130rem;
-  min-width: 35rem;
+  min-width: max(32rem, 320px);
   display: flex;
   gap: 3rem;
   margin: 4rem auto;
@@ -62,9 +62,15 @@
   display: flex;
 }
 
+@media screen and (max-width: 600px) {
+  select {
+    font-size: 2px;
+  }
+}
+
 select {
   border-radius: 4px;
-  font-size: min(1.9rem, 13.3px);
+  font-size: min(2.2vw, 1.9rem);
   border-width: 0px;
   outline: 0;
   /* -webkit-appearance: none; */
@@ -79,5 +85,5 @@ select {
 option {
   padding: 0rem 4rem;
   text-align: center;
-  font-size: min(1.8rem, 12.6px);
+  font-size: min(2.2vw, 1.8rem);
 }

@@ -35,7 +35,7 @@
 
 .form-container {
   max-width: 35rem;
-  min-width: 33rem;
+  min-width: max(33rem, 290px);
   width: 25vw;
   margin: 5rem auto;
   margin-bottom: 2rem;

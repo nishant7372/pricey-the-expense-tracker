@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
-  min-width: 33rem;
+  min-width: max(33rem, 330px);
   max-width: 140rem;
   margin: auto;
 }
