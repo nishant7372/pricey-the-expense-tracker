@@ -5,7 +5,8 @@ import TransactionList from "./TransactionList";
 import TransactionForm from "./TransactionForm";
 import { useCollection } from "../../hooks/useCollection";
 import { Fade, Slide } from "react-awesome-reveal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 export default function Home() {
   const { user } = useAuthContext();
   const [option, setOption] = useState("createdAt");

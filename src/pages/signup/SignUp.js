@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./SignUp.module.css";
 import { useSignup } from "../../hooks/useSignup";
 import { Fade } from "react-awesome-reveal";
+import Spinner from "../../components/Spinner";
 
 export default function SignUp() {
   const [passwordType, setPasswordType] = useState("password");
@@ -74,12 +75,12 @@ export default function SignUp() {
           </label>
           {error && <div className={styles.error}>{"⚠️ " + error}</div>}
           {isPending && (
-            <button
-              className={`${styles["btn"]} ${styles["disabled"]}`}
-              disabled
-            >
-              Creating Account...
-            </button>
+            <>
+              <div className={styles["disabled"]}>
+                <Spinner />
+                <p>Creating Account...</p>
+              </div>
+            </>
           )}
           {!isPending && <button className={`${styles["btn"]}`}>SignUp</button>}
         </form>

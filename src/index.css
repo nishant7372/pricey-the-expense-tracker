@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Baloo Bhai 2", cursive;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -12,13 +13,13 @@ html {
 
 @media screen and (max-width: 600px) {
   html {
-    font-size: 46.875%;
+    font-size: 46.875%; /* 1 rem = 7.5px */
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   html {
-    font-size: 50%;
+    font-size: 50%; /* 1 rem = 8px */
   }
 }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useLogin } from "../../hooks/useLogin";
+import Spinner from "../../components/Spinner";
 import styles from "./LogIn.module.css";
 
 export default function LogIn() {
@@ -23,7 +24,7 @@ export default function LogIn() {
   };
 
   const showPassword = () => {
-    if (passwordType == "password") {
+    if (passwordType === "password") {
       setPasswordType("text");
     } else {
       setPasswordType("password");
@@ -69,18 +70,19 @@ export default function LogIn() {
                 <img
                   src={require(`../../img/eye-${passwordType}.png`)}
                   onClick={showPassword}
+                  alt="eye-toggle"
                 />
               </div>
             </div>
           </label>
           {error && <div className={styles.error}>{parseError(error)}</div>}
           {isPending && (
-            <button
-              className={`${styles["btn"]} ${styles["disabled"]}`}
-              disabled
-            >
-              Signing in...
-            </button>
+            <>
+              <div className={styles["disabled"]}>
+                <Spinner />
+                <p>Signing in...</p>
+              </div>
+            </>
           )}
           {!isPending && <button className={styles.btn}>LogIn</button>}
         </form>
