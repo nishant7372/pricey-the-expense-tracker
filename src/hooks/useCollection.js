@@ -1,15 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { projectFireStore } from "../firebase/config";
 
-export const useCollection = (collection) => {
+export const useCollection = (collection, _query, order,option) => {
   const [document, setDocument] = useState(null);
+  const [isPending,setIsPending] = useState(false);
   const [error, setError] = useState(null);
+
+  const query = useRef(_query).current;
 
   useEffect(() => {
     let ref = projectFireStore.collection(collection);
 
+    if (query) {
+      ref = ref.where(...query);
+    }
+    if(order&&option){
+      ref = ref.orderBy(order,option);
+    }
+
     const unsubscribe = ref.onSnapshot(
       (snapshot) => {
+        setIsPending(true);
         let results = [];
 
         snapshot.docs.forEach((doc) => {
@@ -17,6 +28,7 @@ export const useCollection = (collection) => {
         });
 
         setDocument(results);
+        setIsPending(false);
         setError(null);
       },
       (error) => {
@@ -27,7 +39,7 @@ export const useCollection = (collection) => {
 
     //unsubscribe on unmount
     return () => unsubscribe();
-  }, [collection]);
+  }, [collection, query, order,option]);
 
-  return { document, error };
+  return { document, isPending, error };
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./SignUp.module.css";
 import { useSignup } from "../../hooks/useSignup";
+import { Fade } from "react-awesome-reveal";
 
 export default function SignUp() {
   const [passwordType, setPasswordType] = useState("password");
@@ -24,60 +25,65 @@ export default function SignUp() {
   };
 
   return (
-    <div className={styles[`form-container`]}>
-      <form
-        className={styles["signup-form"]}
-        onSubmit={handleSubmit}
-        spellCheck="false"
-      >
-        <h2>SignUp</h2>
-        <label>
-          <span>Name</span>
-          <input
-            type="text"
-            placeholder="Name"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            required
-            autoFocus
-          />
-        </label>
-        <label>
-          <span>Email</span>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            required
-          />
-        </label>
-        <label className={styles.lastLabel}>
-          <span>Password</span>
-          <div className={styles["password-field"]}>
+    <Fade>
+      <div className={styles[`form-container`]}>
+        <form
+          className={styles["signup-form"]}
+          onSubmit={handleSubmit}
+          spellCheck="false"
+        >
+          <h2>SignUp</h2>
+          <label>
+            <span>Name</span>
             <input
-              type={passwordType}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
+              type="text"
+              placeholder="Name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              required
+              autoFocus
+            />
+          </label>
+          <label>
+            <span>Email</span>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
               required
             />
-            <div className={styles["img"]}>
-              <img
-                src={require(`../../img/eye-${passwordType}.png`)}
-                onClick={showPassword}
+          </label>
+          <label className={styles.lastLabel}>
+            <span>Password</span>
+            <div className={styles["password-field"]}>
+              <input
+                type={passwordType}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
               />
+              <div className={styles["img"]}>
+                <img
+                  src={require(`../../img/eye-${passwordType}.png`)}
+                  onClick={showPassword}
+                />
+              </div>
             </div>
-          </div>
-        </label>
-        {error && <div className={styles.error}>{"⚠️ " + error}</div>}
-        {isPending && (
-          <button className={`${styles["btn"]} ${styles["disabled"]}`} disabled>
-            Creating Account...
-          </button>
-        )}
-        {!isPending && <button className={`${styles["btn"]}`}>SignUp</button>}
-      </form>
-    </div>
+          </label>
+          {error && <div className={styles.error}>{"⚠️ " + error}</div>}
+          {isPending && (
+            <button
+              className={`${styles["btn"]} ${styles["disabled"]}`}
+              disabled
+            >
+              Creating Account...
+            </button>
+          )}
+          {!isPending && <button className={`${styles["btn"]}`}>SignUp</button>}
+        </form>
+      </div>
+    </Fade>
   );
 }

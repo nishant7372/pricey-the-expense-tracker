@@ -7,12 +7,77 @@
   margin: 4rem auto;
 }
 
+@media only screen and (max-width: 800px) {
+  .main-container {
+    flex-direction: column-reverse;
+  }
+  .transaction-form {
+    margin: auto;
+  }
+  .transaction-list {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .main-container {
+    flex-direction: row;
+  }
+  .transaction-list {
+    width: 95rem;
+  }
+}
+
 .transaction-list {
   font-size: large;
   color: white;
-  width: 95rem;
 }
 
 .transaction-form {
   width: 32rem;
+}
+
+.title {
+  background-color: rgb(234, 21, 63);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.2rem 2.2rem;
+  border-radius: 5px;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.title-container {
+  padding: 0 2.4rem;
+}
+
+.filter {
+  background-color: rgba(55, 54, 62, 255);
+  padding: 0rem 0.4rem;
+  border-radius: 4px;
+  display: flex;
+}
+
+select {
+  border-radius: 4px;
+  font-size: 1.9rem;
+  border-width: 0px;
+  outline: 0;
+  /* -webkit-appearance: none; */
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: rgba(55, 54, 62, 255);
+  color: white;
+  width: 100%;
+}
+
+option {
+  padding: 0rem 4rem;
+  text-align: center;
+  font-size: 1.8rem;
 }

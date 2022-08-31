@@ -1,19 +1,24 @@
 .card {
+  background-color: rgba(40, 39, 47, 255);
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1.2rem;
-  border-left: 0.7rem solid green;
+  padding: 1.2rem 2rem;
+  border-left: 0.9rem solid green;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   font-size: 2.4rem;
   cursor: pointer;
-  z-index: 4;
+  position: relative;
+  z-index: 2;
 }
 
 .card-border {
   border-bottom: 1px solid #777;
+  border-right: 1px solid #777;
 }
 
 li {
@@ -21,7 +26,10 @@ li {
 }
 
 .card-noborder {
+  border-right: 1px solid #777;
   border-bottom: 1px solid #777;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* .card:last-child {
@@ -31,10 +39,14 @@ li {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  background-color: rgba(40, 39, 47, 255);
+  gap: 3rem;
+  /* background-color: rgba(40, 39, 47, 255); */
   padding: 2.4rem;
   border-radius: 6px;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .right-section {
@@ -52,7 +64,7 @@ li {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 68, 0, 0.875);
 }
 
 .cross {
