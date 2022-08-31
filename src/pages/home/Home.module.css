@@ -70,7 +70,7 @@
 
 select {
   border-radius: 4px;
-  font-size: min(2.2vw, 1.9rem);
+  font-size: min(2.6vw, 1.9rem);
   border-width: 0px;
   outline: 0;
   /* -webkit-appearance: none; */
@@ -85,5 +85,5 @@ select {
 option {
   padding: 0rem 4rem;
   text-align: center;
-  font-size: min(2.2vw, 1.8rem);
+  font-size: min(2.6vw, 1.8rem);
 }
