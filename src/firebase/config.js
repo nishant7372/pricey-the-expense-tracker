@@ -4,13 +4,13 @@ import "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCSwB4KN5fODEp938TmXG3JcJUFu0XkPqc",
-  authDomain: "pricey---the-finance-tracker.firebaseapp.com",
-  projectId: "pricey---the-finance-tracker",
-  storageBucket: "pricey---the-finance-tracker.appspot.com",
-  messagingSenderId: "440895794618",
-  appId: "1:440895794618:web:2067aa2822ceb13d5dc183",
-  measurementId: "G-GSCZM01DKG",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 //init firebase
